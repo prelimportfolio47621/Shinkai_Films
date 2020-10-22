@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Makoto Shinkai Films</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+        <script defer src="./script.js"></script>
+    </head>
+    <body>
+        <script id="films" type="text/x-handlebars-template">
+            {{#each filmArray}}
+                <div class="film-entry">
+                    <div class="film-poster">
+                        <img src="{{this.img.src}}" alt="{{this.img.alt}}">
+                    </div>
+                    <div class="film-entry-text">
+                        <h3>{{this.title}}</h3>
+                        <p><strong>Release Date:</strong> {{this.releaseDate}}</p>
+                        <p><strong>Summary:</strong> {{this.summary}}</p>
+                        <a href="{{this.imdbUrl}}"><strong style="text-decoration: underline">Visit this film's IMDB page for more information</strong></a>
+                    </div>
+                </div>
+            {{/each}}
+        </script>
+        <script id="nav-menu" type="text/x-handlebars-template"></script>
+        <nav>
+            <div class="brand-name">Shinkai</div>
+            <ul id="nav-menu"></ul>
+        </nav>
+        <main>
+            <section class="heading">
+                <h1>Makoto Shinkai's Films</h1>
+                <p>Listed below are all of writer/director Makoto Shinkai's feature-length films, listed in the order in which they were released.</p>
+            </section>
+            <section class="film-list"></section>
+        </main>
+    </body>
+</html>
